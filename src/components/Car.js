@@ -13,7 +13,7 @@ export function ContextProvider({children}) {
         return state = 0
       
       case 'off':
-        return 'Ausgeschaltet'
+        return state === 0? 'Ausgeschaltet' : null
 
       case 'accelerate':
           return state +10
