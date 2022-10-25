@@ -43,9 +43,15 @@ export default function Car() {
 
   return (
     <div className="car">
+      <div style={
+        {textAlign: 'center',
+        height:'50px',
+        marginTop:'20px'}}>
+      {state}
+      </div>
    
-      <button onClick={()=> dispatchState({type: 'on'})}>Aschalten</button>
-      <button onClick={()=> dispatchState({type: 'off'})}>Aschalten</button>
+      <button onClick={()=> dispatchState({type: 'on'})}>ON</button>
+      <button onClick={()=> dispatchState({type: 'off'})}>OFF</button>
       <button onClick={()=> dispatchState({type:'accelerate'})}>Gas Geben</button>
       <button onClick={() => dispatchState({type: 'break'})}>Bremsen</button>
     </div>
