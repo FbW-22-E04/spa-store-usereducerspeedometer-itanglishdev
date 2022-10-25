@@ -9,6 +9,7 @@ export function ContextProvider({children}) {
     switch (action.type) {
 
       case 'on':
+        
         return state = 0
       
       case 'off':
@@ -18,7 +19,8 @@ export function ContextProvider({children}) {
           return state +10
 
       case 'break':
-            return state - 10
+        
+            return state <= 0? 0 : state - 10
 
       default:
               return 0
