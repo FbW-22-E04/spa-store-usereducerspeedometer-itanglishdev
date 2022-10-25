@@ -9,15 +9,17 @@ export function ContextProvider({children}) {
     switch (action.type) {
 
       case 'on':
-        return state = 'on'
+        return state = 0
       
       case 'off':
-        return
+        return 'Ausgeschaltet'
 
       case 'accelerate':
-          return
+          return state +10
+
       case 'break':
-            return
+            return state - 10
+
       default:
               return 0
 
@@ -41,12 +43,11 @@ export default function Car() {
 
   return (
     <div className="car">
-    Make your instrument cluster here
-    <div>
+   
       <button onClick={()=> dispatchState({type: 'on'})}>Aschalten</button>
+      <button onClick={()=> dispatchState({type: 'off'})}>Aschalten</button>
       <button onClick={()=> dispatchState({type:'accelerate'})}>Gas Geben</button>
       <button onClick={() => dispatchState({type: 'break'})}>Bremsen</button>
-    </div>
     </div>
   )
 }
