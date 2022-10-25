@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 
 const CounterContext = createContext()
 
@@ -33,8 +33,20 @@ return <CounterContext.Provider value={{state, dispatchState}}>
 }
 
 
-
-
 export default function Car() {
-  return <div className="car">Make your instrument cluster here</div>;
+
+
+  const {state,dispatchState} = useContext(CounterContext)
+
+
+  return (
+    <div className="car">
+    Make your instrument cluster here
+    <div>
+      <button onClick={()=> dispatchState({type: 'on'})}>Aschalten</button>
+      <button onClick={()=> dispatchState({type:'accelerate'})}>Gas Geben</button>
+      <button onClick={() => dispatchState({type: 'break'})}>Bremsen</button>
+    </div>
+    </div>
+  )
 }
